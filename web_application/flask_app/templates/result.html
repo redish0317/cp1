@@ -10,6 +10,10 @@
         <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='assets/favicon.ico') }}" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet" />
+        <style>
+            th, td {padding:20px}
+            table {border-spacing:10px}
+        </style>
     </head>
     <body>
         <!-- Responsive navbar-->
@@ -38,10 +42,23 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                <h1>A Bootstrap 5 Starter Template</h1>
-                <p class="lead">A complete project boilerplate built with Bootstrap</p>
-                <p>Bootstrap v5.1.3</p>
+                <h1>추천 결과</h1><br/>
+                <p class="lead">추천 키워드 : &nbsp;&nbsp;{{keyword}}</p>
             </div>
+            
+            <table>
+                <th></th>
+                <th>회사명</th>
+                <th>잡포지션</th>
+                {% for item in recommended_list %}
+                <tr>                    
+                    <td><a href="{{item[0]}}"><img src="{{item[1]}}" height="100" width="100"></img></a></td>
+                    <input type="hidden" name="url" value="{{item[0]}}">
+                    <td>{{item[2]}}</td>
+                    <td>{{item[3]}}</td>
+                </tr>
+                {% endfor %}
+            </table>
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
