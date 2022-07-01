@@ -20,7 +20,7 @@ def result():
         career = request.form['career'][3]
     skill = ' '.join(request.form.getlist('skill'))
     skill2 = ', '.join(request.form.getlist('skill'))
-    task = ' '.join(request.form.getlist('task'))
+    task = ' '.join(request.form.get('task').split())
 
     #tfidf 해석 위한 함수 호출
     recommended_list = tfidf(jobgroup, career, skill + ' ' + task)
