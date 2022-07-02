@@ -71,7 +71,7 @@ def tfidf(jobgroup, career, skill):
         if flag:
             flag = False
             continue
-        recommended.append([df_db.loc[i,'url'],df_db.loc[i,'logo'],df_db.loc[i,'company'],df_db.loc[i,'position']]) # [url, 로고 url, 회사이름, 잡포지션]
+        recommended.append([df_db.loc[i,'url'],df_db.loc[i,'logo'],df_db.loc[i,'company'],df_db.loc[i,'position'],round(factor,3)]) # [url, 로고 url, 회사이름, 잡포지션]
 
     cur.close()
     conn.close()

@@ -50,12 +50,14 @@
                 <th></th>
                 <th>회사명</th>
                 <th>잡포지션</th>
+                <th>KNN 최근접거리 결과</th>
                 {% for item in recommended_list %}
                 <tr>                    
                     <td><a href="{{item[0]}}"><img src="{{item[1]}}" height="100" width="100"></img></a></td>
                     <input type="hidden" name="url" value="{{item[0]}}">
                     <td>{{item[2]}}</td>
                     <td>{{item[3]}}</td>
+                    <td>{{item[4]}}</td>
                 </tr>
                 {% endfor %}
             </table>
