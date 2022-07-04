@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request
 import psycopg2
 import pandas as pd
+import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.neighbors import NearestNeighbors
 
@@ -65,13 +66,18 @@ def tfidf(jobgroup, career, skill):
 
     idx = nn.kneighbors([dtm_tfidf.iloc[len(dtm_tfidf)-1]]) # 유사도 분석 결과 (유사도, index)
 
+    nn_cosine = NearestNeighbors(n_neighbors=len(df_tfidf), algorithm='brute', metric='cosine') # NearestNeighbors 객체 생성
+    nn_cosine.fit(dtm_tfidf) # NearestNeighbors fit 수행
+
+    idx_cosine = nn_cosine.kneighbors([dtm_tfidf.iloc[len(dtm_tfidf)-1]]) # 유사도 분석 결과 (유사도, index)    
+
     recommended = list() # 추천 결과 list에 저장
     flag = True
     for factor, i in zip(idx[0][0], idx[1][0]):
         if flag:
             flag = False
             continue
-        recommended.append([df_db.loc[i,'url'],df_db.loc[i,'logo'],df_db.loc[i,'company'],df_db.loc[i,'position'],round(factor,3)]) # [url, 로고 url, 회사이름, 잡포지션]
+        recommended.append([df_db.loc[i,'url'],df_db.loc[i,'logo'],df_db.loc[i,'company'],df_db.loc[i,'position'],round(factor,3),round(idx_cosine[0][0][np.where(idx_cosine[1][0] == i)][0],3)]) # [url, 로고 url, 회사이름, 잡포지션, knn 거리, 코사인 유사도]
 
     cur.close()
     conn.close()

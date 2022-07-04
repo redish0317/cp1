@@ -51,6 +51,7 @@
                 <th>회사명</th>
                 <th>잡포지션</th>
                 <th>KNN 최근접거리 결과</th>
+                <th>Cosine 유사도</th>
                 {% for item in recommended_list %}
                 <tr>                    
                     <td><a href="{{item[0]}}"><img src="{{item[1]}}" height="100" width="100"></img></a></td>
@@ -58,6 +59,7 @@
                     <td>{{item[2]}}</td>
                     <td>{{item[3]}}</td>
                     <td>{{item[4]}}</td>
+                    <td>{{item[5]}}</td>
                 </tr>
                 {% endfor %}
             </table>
