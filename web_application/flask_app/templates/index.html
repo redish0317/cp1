@@ -8,6 +8,9 @@
         <title>Team1 cp1</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='assets/favicon.ico') }}" />
+        
+        <script src="{{ url_for('static', filename='script.js') }}" > </script> 
+
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet" />
     </head>
@@ -37,13 +40,19 @@
               </div>
             </div>
             <div class="row g-5">
-                <div class="col-md-8">
+                <div class="col-md-6">
                   <h3 class="pb-4 mb-4 fst-italic border-bottom">
                     Input your profile
                   </h3>
                 </div>
+                <div class="col-md-6">
+                    <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                        Statistics
+                    </h3>                    
+                </div>
+                <div class="col-md-6">            
                 <form class="needs-validation" action="/result" method="post" novalidate>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                       <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-primary">Job-group</strong>
@@ -61,8 +70,8 @@
                         </div>                        
                       </div>                      
                     </div>
-                </div>
-                <div class="col-md-8">
+                </div>             
+                <div class="col-md-12">
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                       <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-primary">Career</strong>
@@ -86,41 +95,41 @@
                       </div>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                       <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-primary">Stack</strong>
                         <h4 class="mb-0">기술스택</h4>
                         <div>
-                        <label><input type="checkbox" name="skill" value="Python">Python</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="AWS">AWS</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="JavaScript">JavaScript</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Java">Java</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Git">Git</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="MySQL">MySQL</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="React">React</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Docker">Docker</label><br/><br/>
-                        <label><input type="checkbox" name="skill" value="SQL">SQL</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Linux">Linux</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Kotlin">Kotlin</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Spring Framework">Spring Framework</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="TypeScript">TypeScript</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="iOS">iOS</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Node.js">Node.js</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="GitHub">GitHub</label><br/><br/>
-                        <label><input type="checkbox" name="skill" value="C++">C++</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Android">Android</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Tensorflow">Tensorflow</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Swift">Swift</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Pytorch">Pytorch</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="HTML">HTML</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="VueJS">VueJS</label>&nbsp;&nbsp;&nbsp;&nbsp;
-                        <label><input type="checkbox" name="skill" value="Hadoop">Hadoop</label><br/><br/><br/>
+                        <label><input type="checkbox" name="skill" value="Python">Python</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="AWS">AWS</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="JavaScript">JavaScript</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Java">Java</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Git">Git</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="MySQL">MySQL</label><br/><br/>
+                        <label><input type="checkbox" name="skill" value="React">React</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Docker">Docker</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="SQL">SQL</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Linux">Linux</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Kotlin">Kotlin</label><br/><br/>
+                        <label><input type="checkbox" name="skill" value="Spring Framework">Spring Framework</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="TypeScript">TypeScript</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="iOS">iOS</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Node.js">Node.js</label><br/><br/>
+                        <label><input type="checkbox" name="skill" value="GitHub">GitHub</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="C++">C++</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Android">Android</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Tensorflow">Tensorflow</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Swift">Swift</label><br/><br/>
+                        <label><input type="checkbox" name="skill" value="Pytorch">Pytorch</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="HTML">HTML</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="VueJS">VueJS</label>&nbsp;&nbsp;&nbsp;
+                        <label><input type="checkbox" name="skill" value="Hadoop">Hadoop</label><br/><br/>
                         </div>
                       </div>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                       <div class="col p-4 d-flex flex-column position-static">
                         <strong class="d-inline-block mb-2 text-primary">Experience</strong>
@@ -129,10 +138,23 @@
                         <div class="text-center">
                         <button id="resbtn" class="w-20 btn btn-primary btn-lg" type="submit">Submit</button>
                         </div>
-                        </div>
-                    
-                    </form>
-                </div>                                
+                        </div>                 
+                    </div>                               
+                </div>
+                </form>
+                </div>  
+                <div class="col-md-6">
+                    <div class="col-md-12">
+                    <canvas id="doughnut-chart" width="12" height="7"></canvas>
+                    </div>
+                    <div>
+                        <p><br><br><br></p>
+                    </div>
+                    <div class="col-md-12">
+                        <canvas id="bar-chart-horizontal" width="12" height="7"></canvas>
+                    </div>        
+                </div>
+                                      
             </div>            
         </main>
         <!-- <div class="container"> 기존코드
@@ -211,6 +233,9 @@
         </div> -->
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
         <!-- Core theme JS-->
         <script src={{ url_for('static',filename='js/scripts.js') }}></script>
         <script src="{{ url_for('static',filename='js/form-validation.js') }}"></script>

@@ -945,7 +945,16 @@ progress {
     flex: 0 0 auto;
     width: 16.66666667%;
   }
-
+  .chart_blue { background: #5abae6}
+  span {
+    display: block;
+    margin: 10px 0;
+    color: #FFF;
+    font-size : 20px;
+    line-height: 1.8em;
+    text-align : center;
+    border-radius: 15px;
+  }
   .col-sm-3 {
     flex: 0 0 auto;
     width: 25%;
@@ -3935,7 +3944,7 @@ textarea.form-control-lg {
   display: flex;
   flex-wrap: wrap;
   padding-left: 0;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   list-style: none;
 }
 

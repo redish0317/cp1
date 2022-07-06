@@ -8,6 +8,9 @@
         <title>Team1 cp1</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='assets/favicon.ico') }}" />
+
+        <script src="{{ url_for('static', filename='script.js') }}" > </script> 
+
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet" />
         <style>
@@ -67,7 +70,15 @@
                 
               </div>
             </div>
-          </div>
+          </div>          
+          <!-- <div>
+            <span class="chart_blue" data-val = '20%'> A</span>
+            <span class="blue" data-val = '20%'> A</span>
+            <span class="blue" data-val = '20%'> A</span>
+            <span class="blue" data-val = '20%'> A</span>          
+          </div> -->
+          
+          
         <!-- <div class="container">
             <div class="text-center mt-5">
                 <h1>추천 결과</h1><br/>
@@ -95,5 +106,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src={{ url_for('static',filename='js/scripts.js') }}></script>
+        
+      
     </body>
 </html>
